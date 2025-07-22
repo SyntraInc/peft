@@ -1652,7 +1652,7 @@ class PeftModelForSequenceClassification(PeftModel):
                 return self.base_model(
                     input_features=input_ids,
                     attention_mask=attention_mask,
-                    inputs_embeds=inputs_embeds,
+                    # inputs_embeds=inputs_embeds,
                     labels=labels,
                     output_attentions=output_attentions,
                     output_hidden_states=output_hidden_states,
