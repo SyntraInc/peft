@@ -1650,14 +1650,14 @@ class PeftModelForSequenceClassification(PeftModel):
                 if peft_config.peft_type == PeftType.POLY:
                     kwargs["task_ids"] = task_ids
                 return self.base_model(
-                    input_ids=input_ids,
+                    input_features=input_ids,
                     attention_mask=attention_mask,
                     inputs_embeds=inputs_embeds,
                     labels=labels,
                     output_attentions=output_attentions,
                     output_hidden_states=output_hidden_states,
                     return_dict=return_dict,
-                    **kwargs,
+                    # **kwargs,
                 )
 
         batch_size = _get_batch_size(input_ids, inputs_embeds)
