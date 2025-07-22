@@ -1650,7 +1650,7 @@ class PeftModelForSequenceClassification(PeftModel):
                 if peft_config.peft_type == PeftType.POLY:
                     kwargs["task_ids"] = task_ids
                 return self.base_model(
-                    input_features=input_ids,
+                    input_features=kwargs["input_features"],
                     attention_mask=attention_mask,
                     # inputs_embeds=inputs_embeds,
                     labels=labels,
